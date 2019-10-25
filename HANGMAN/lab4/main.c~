@@ -1,0 +1,45 @@
+#include "my_string.h"
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char* argv[])
+{
+  MY_STRING string1 = NULL;
+  MY_STRING string2 = NULL;
+  int i;
+  string1 = my_string_init_c_string("hello");
+  string2 = my_string_init_c_string(" sir");
+  printf("string 1:");
+  for(i = 0; i <= my_string_get_size(string1); i++)
+    {
+      printf("%c", *my_string_at(string1, i));
+    }
+  printf("\n");
+  printf("string 2:");
+  for(i = 0; i <= my_string_get_size(string2); i++)
+    {
+      printf("%c", *my_string_at(string2, i));
+    }
+  printf("\n");
+  printf("string at specified index: %c\n", *my_string_at(string1, 4));
+  printf("first element: %s\n", *my_string_c_str(string1));
+  my_string_concat(string1, string2);
+  printf("size of new string after concatenation: %d\n", my_string_get_size(string1));
+  printf("concatenated string: ");
+  for(i = 0; i <= my_string_get_size(string1); i++)
+    {
+      printf("%c",*my_string_at(string1, i));
+    }
+  printf("\n");
+  my_string_push_back(string1, 'c');
+  for(i = 0; i <= my_string_get_size(string1); i++)
+    {
+      printf("%c", *my_string_at(string1, i));
+    }
+  printf("\n");
+  my_string_pop_back(string1);
+  printf("string empty: %d\n", my_string_empty(string1));
+  my_string_destroy(&string1);
+  my_string_destroy(&string2);
+  return 0;
+
+}

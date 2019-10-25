@@ -1,0 +1,6 @@
+I have been trying to fix the memory leaks in this program constantly. I think the memory leaks are
+primarily from not destroying my AVL tree after each iteration. I have a function to destroy the
+tree in post-order recursivelly using another function which destroys nodes. I cant seem to get
+the destroy_tree function I have to work at all. However, the avl tree works properly and I cant seem to find any errors
+in the program. I managed to find all the errors and the game seems to works as intended. 
+The only problem is that I cant figure out how to make my destroy_tree function work.
